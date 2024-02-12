@@ -6,7 +6,32 @@
   <title>Naga Chetan Pidugu - Resume</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <style>
-    /* Add custom styles here */
+    body {
+      background-color: #f6f6f6;
+    }
+    .navbar {
+      background-color: #333;
+    }
+    .navbar-brand {
+      color: #fff;
+    }
+    .navbar-nav li a {
+      color: #fff;
+    }
+    .section-heading {
+      color: #333;
+    }
+    .section-content {
+      background-color: #fff;
+      border-radius: 5px;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 20px 0;
+    }
   </style>
 </head>
 <body>
@@ -44,8 +69,8 @@
       <hr>
       
       <!-- Skills Section -->
-      <section id="skills">
-        <h2>Computer & Technical Skills</h2>
+      <section id="skills" class="section-content">
+        <h2 class="section-heading">Computer & Technical Skills</h2>
         <p><strong>Programming Languages:</strong> Python, JAVA, SQL, C, C++, C#, HTML, CSS</p>
         <p><strong>Software Developer Tools:</strong> Git, Docker, VS Code, Visual Studio, PyCharm, Eclipse</p>
         <p><strong>Frameworks:</strong> React, Node.js, WordPress</p>
@@ -54,25 +79,27 @@
       </section>
       
       <!-- Education Section -->
-      <section id="education">
-        <h2>Education</h2>
+      <section id="education" class="section-content">
+        <h2 class="section-heading">Education</h2>
         <p><strong>Master of Science:</strong> Information Technology <br> University of Cincinnati, Cincinnati, Ohio</p>
         <p><strong>Bachelor of Technology:</strong> Electronics and Communication Engineering (Honors) <br> Lovely Professional University, India</p>
       </section>
       
       <!-- Projects Section -->
-      <section id="projects">
-        <h2>Technical Projects</h2>
+      <section id="projects" class="section-content">
+        <h2 class="section-heading">Technical Projects</h2>
         <p><strong>Real-time Face Mask Detection:</strong> Developed an application using Python, OpenCV, and TensorFlow for real-time video processing and deploying a deep learning model.</p>
         <p><strong>Autonomous Land Rover:</strong> Created a website for detailed analytics of land rover behavior using HTML, CSS, JS, and React. Implemented Dijkstra's algorithm for computing shortest paths between GPS coordinates.</p>
       </section>
       
       <!-- Experience Section -->
-      <section id="experience">
-        <h2>Professional and Technical Work Experience</h2>
+      <section id="experience" class="section-content">
+        <h2 class="section-heading">Professional and Technical Work Experience</h2>
         <p><strong>Software Engineer, Full-time:</strong> L&T Technology Services, Mysore, India <br> Developed web pages for various projects, gained experience in testing applications, and programmed algorithms for land rover navigation.</p>
         <p><strong>Project Intern:</strong> Central Institute of Tool Design, Hyderabad, India <br> Contributed to the development of a water quality monitoring system, visualized and analyzed sensor data, and integrated data using ThingSpeak API.</p>
       </section>
+      
+
       
       <!-- Awards Section -->
       <section id="awards">
