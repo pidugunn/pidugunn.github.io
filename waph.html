@@ -131,11 +131,7 @@
                         }
 
 
-                        $.get("https://v2.jokeapi.dev/joke/Programming?type=single",
-                            function(result){
-                                console.log("From jokeAPI: " + JSON.stringify(result));
-                                $("#response").html("A programming joke of the day: "+result.joke);
-                            });
+                    
 
                         async function guessAge(name){
                             const response = await fetch("https://api.agify.io/?name="+name);
@@ -165,5 +161,29 @@
         });
     </script>
     <div>{{ message }}</div>
+    <div class="wrapper">
+            <div id="menubar">
+                <h3>Student: Naga Chetan Pidugu</h3>
+                <!-- Other menu items -->
+                <div id="response"></div> <!-- Display area for the joke -->
+                <script>
+                    // Function to fetch a joke from the JokeAPI
+                    function fetchJoke() {
+                        $.get("https://v2.jokeapi.dev/joke/Programming?type=single",
+                            function(result){
+                                console.log("From jokeAPI: " + JSON.stringify(result));
+                                $("#response").html("A programming joke of the minute: "+result.joke);
+                            });
+                    }
+
+                    // Fetch a joke initially
+                    fetchJoke();
+
+                    // Fetch a new joke every minute
+                    setInterval(fetchJoke, 60000); // 60000 milliseconds = 1 minute
+                </script>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
