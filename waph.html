@@ -186,32 +186,6 @@
         </div>
     </div>
     
-            <div id="main">
-                <!-- Main content -->
-                <!-- Integration of XKCD comic -->
-                <div>
-                    <b>XKCD Comic of the Day</b>
-                    <div id="xkcdComic">
-                        <!-- Comic will be displayed here -->
-                    </div>
-                </div>
-            </div>
-
-    <script>
-        // Function to fetch XKCD comic
-        function fetchXKCDComic() {
-            $.getJSON("https://xkcd.com/info.0.json", function(data) {
-                // Extract the comic image URL
-                var comicURL = data.img;
-                // Create an img element to display the comic
-                var imgElement = $("<img>").attr("src", comicURL).attr("alt", "XKCD Comic");
-                // Append the image to the specified div
-                $("#xkcdComic").append(imgElement);
-            });
-        }
-
-        // Fetch XKCD comic initially
-        fetchXKCDComic();
-    </script>
+           
 </body>
 </html>
