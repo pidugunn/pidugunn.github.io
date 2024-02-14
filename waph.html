@@ -22,7 +22,7 @@
     </style>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 </head>
-<body>
+<body ng-app="myApp" ng-controller="myCtrl">
     <div class="container wrapper">
         <div id="top">
             <h1>Web Application Programming and Hacking</h1>
@@ -86,6 +86,8 @@
                     <input class="button round" type="button" value="Ajax Echo" onclick="getEcho()">
                     <input class="button round" type="button" value="jQuery Ajax GET Echo" onclick="jQueryAjax()">
                     <input class="button round" type="button" value="jQuery Ajax POST Echo" onclick="jQueryAjaxPost()">
+                    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+                    <link rel="stylesheet" type="text/css" href="https://waph-uc.github.io/style1.css">
                     <input class="button round" type="button" value="guess Age" onclick="guessAge($('#data').val())">
                     <div id="response"></div>
                     <script>
@@ -152,5 +154,15 @@
             </div>
         </div>
     </div>
+    <script>
+        // Define AngularJS module
+        var app = angular.module('myApp', []);
+        
+        // Define AngularJS controller
+        app.controller('myCtrl', function($scope) {
+            // Define variables and functions for the controller
+            $scope.message = 'Hello from AngularJS!';
+        });
+    </script>
 </body>
 </html>
