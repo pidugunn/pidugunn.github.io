@@ -185,7 +185,30 @@
             </div>
         </div>
     </div>
-    
+    <script>
+  // Replace 'YOUR_API_KEY' with your Weatherbit.io API key
+  const apiKey = 'cb388c42c8154dc1a25190f00185f145';
+  const apiUrl = `https://api.weatherbit.io/v2.0/current?key=${apiKey}&city=cincinnati`;
+
+  // Fetch weather data from Weatherbit.io API
+  fetch(apiUrl)
+    .then(response => response.json())
+    .then(data => {
+      // Extract relevant weather information
+      const weather = data.data[0];
+      const temperature = weather.temp;
+      const description = weather.weather.description;
+
+      // Display weather information on the page
+      document.getElementById('weather-info').innerHTML = `
+        <p>Temperature: ${temperature}°C</p>
+        <p>Description: ${description}</p>
+      `;
+    })
+    .catch(error => {
+      console.error('Error fetching weather data:', error);
+    });
+</script>
            
 </body>
 </html>
