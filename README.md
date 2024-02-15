@@ -76,11 +76,11 @@ Course Outcomes URL : [https://pidugunn.github.io/waph.html](https://pidugunn.gi
 
 - I have written the script for the JOKE API in jQuery and set the time limit to 60000ms that is 1 min that changes the code and call the function without refreshing the page.
 
-![JOKE API ](images/jQueryjoke.png)
+![JOKE API ](images/jokeexa1.png)
 
 - After 1 min I took second screenshot without refreshing the page.
 
-![JOKE API ](images/jQueryjokeex2.png)
+![JOKE API ](images/jokeexa2.png)
 
 
 ![JOKE API Code ](images/joke1min.png)
