@@ -6,7 +6,7 @@
 
 **Email**: pidugunn@ucmail.uc.edu
 
-![Chetan Photo](images/image.jpeg)
+![Chetan Photo](image.jpeg)
 
 ## Repository URL
 
