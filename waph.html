@@ -28,6 +28,7 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 </head>
 <body ng-app="myApp" ng-controller="myCtrl">
+    <div id="digital-clock">{{ currentTime }}</div>
     <div class="container wrapper">
         <div id="top">
             <h1>Web Application Programming and Hacking</h1>
@@ -63,6 +64,24 @@
                         drawTime(ctx, radius);
                     }
                 </script>
+                <script>
+        // Define AngularJS module
+        var app = angular.module('myApp', []);
+
+        // Define AngularJS controller
+        app.controller('myCtrl', function($scope, $interval) {
+            // Function to update the current time
+            function updateTime() {
+                $scope.currentTime = new Date().toLocaleTimeString();
+            }
+
+            // Set initial time
+            updateTime();
+
+            // Update time every second
+            $interval(updateTime, 1000);
+        });
+    </script>
             </div>
             <div id="main">
                 <p>A simple HTML page </p>
