@@ -12,6 +12,11 @@
 
 Respository's URL: [https://github.com/pidugunn/pidugunn.github.io](https://github.com/pidugunn/pidugunn.github.io)
 
+Website URL : [https://pidugunn.github.io/index.html](https://pidugunn.github.io/index.html)
+
+Course Outcomes URL : [https://pidugunn.github.io/waph.html](https://pidugunn.github.io/waph.html)
+
+
 # Project 1 - Front-end Web Development on github.io cloud service with a Professional Profile Website.
 
 
