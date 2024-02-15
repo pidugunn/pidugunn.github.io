@@ -107,7 +107,6 @@ Respository's URL: [https://github.com/pidugunn/pidugunn.github.io](https://gith
 ![Time and date Cookie ](images/cookietime.png)
 
 
-![Time and date Cookie ](images/cookietime.png)
 
 
 ![Cookie code](images/cookiecode1.png)
