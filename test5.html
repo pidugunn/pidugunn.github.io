@@ -1,574 +1,505 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Naga Chetan Pidugu - Profile</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Naga Chetan Pidugu - Profile</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css">
   <style>
     /* Global Styles */
     body {
-      font-family: 'Roboto', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f8f9fa;
-      color: #495057;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: #333;
+    }
+
+    a:hover {
+      color: #ff6b6b;
     }
 
     /* Navbar Styles */
     .navbar {
-      background-color: #343a40;
-      padding: 15px 0;
-      position: fixed;
-      width: 100%;
-      z-index: 1000;
-    }
-
-    .navbar-brand, .navbar-nav .nav-link {
-      color: #fff !important;
-    }
-
-    .navbar-brand:hover, .navbar-nav .nav-link:hover {
-      color: #ffc107 !important;
+      background-color: #ff6b6b !important;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
 
     .navbar-brand {
-      font-size: 24px;
+      font-size: 1.8rem;
       font-weight: 700;
-      letter-spacing: 2px;
+      color: #fff !important;
+    }
+
+    .navbar-nav .nav-link {
+      color: #fff !important;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .navbar-nav .nav-link:hover {
+      color: #ff9797 !important;
     }
 
     /* Jumbotron Styles */
     .jumbotron {
-      background-color: #343a40;
+      background-image: linear-gradient(120deg, #ff6b6b, #ffa564);
       color: #fff;
-      padding: 100px 0;
       text-align: center;
-      margin-top: 70px;
+      padding: 100px 20px;
+      margin-bottom: 0;
     }
 
     .profile-img {
-      border-radius: 50%;
       width: 200px;
       height: 200px;
-      margin-bottom: 20px;
+      border-radius: 50%;
+      border: 8px solid #fff;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     }
 
     .jumbotron h1 {
-      font-size: 36px;
-      font-weight: 700;
+      font-size: 3.5rem;
       margin-bottom: 20px;
+      font-weight: 700;
     }
 
     .jumbotron p {
-      font-size: 18px;
-      font-weight: 400;
-      margin-bottom: 30px;
+      font-size: 1.2rem;
+      margin-bottom: 40px;
     }
 
-    /* About Section Styles */
-    #about {
-      background-color: #fff;
+    /* Section Styles */
+    section {
       padding: 80px 0;
     }
 
-    #about h2 {
-      font-size: 36px;
+    section h2 {
+      font-size: 2.5rem;
       font-weight: 700;
-      text-align: center;
       margin-bottom: 40px;
+      text-align: center;
+    }
+
+    /* About Section */
+    #about {
+      background-color: #fff;
     }
 
     #about p {
-      font-size: 18px;
-      font-weight: 400;
-      text-align: center;
-      margin-bottom: 30px;
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin-bottom: 40px;
     }
 
-    /* Education Section Styles */
+    /* Education Section */
     #education {
       background-color: #f8f9fa;
-      padding: 80px 0;
     }
 
-    #education h2 {
-      font-size: 36px;
-      font-weight: 700;
-      text-align: center;
+    .education-item {
       margin-bottom: 40px;
     }
 
-    #education h4 {
-      font-size: 24px;
-      font-weight: 700;
-      margin-bottom: 20px;
-    }
-
-    #education p {
-      font-size: 18px;
-      font-weight: 400;
+    .education-item h4 {
+      font-size: 1.5rem;
+      font-weight: 600;
       margin-bottom: 10px;
     }
 
-    /* Experience Section Styles */
+    /* Experience Section */
     #experience {
       background-color: #fff;
-      padding: 80px 0;
     }
 
-    #experience h2 {
-      font-size: 36px;
-      font-weight: 700;
-      text-align: center;
+    .experience-item {
       margin-bottom: 40px;
     }
 
-    #experience h4 {
-      font-size: 24px;
-      font-weight: 700;
-      margin-bottom: 20px;
-    }
-
-    #experience h5 {
-      font-size: 20px;
-      font-weight: 500;
+    .experience-item h4 {
+      font-size: 1.5rem;
+      font-weight: 600;
       margin-bottom: 10px;
     }
 
-    #experience p {
-      font-size: 18px;
-      font-weight: 400;
-      margin-bottom: 20px;
+    .experience-item h5 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #ff6b6b;
+      margin-bottom: 10px;
     }
 
-    /* Skills Section Styles */
+    /* Skills Section */
     #skills {
       background-color: #f8f9fa;
-      padding: 80px 0;
     }
 
-    #skills h2 {
-      font-size: 36px;
-      font-weight: 700;
-      text-align: center;
-      margin-bottom: 40px;
-    }
-
-    #skills h4 {
-      font-size: 24px;
-      font-weight: 700;
-      margin-bottom: 20px;
-    }
-
-    #skills p {
-      font-size: 18px;
-      font-weight: 400;
+    .skill-item h4 {
+      font-size: 1.5rem;
+      font-weight: 600;
       margin-bottom: 10px;
     }
 
-    /* Projects Section Styles */
+    .skill-item p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    /* Projects Section */
     #projects {
       background-color: #fff;
-      padding: 80px 0;
     }
 
-    #projects h2 {
-      font-size: 36px;
-      font-weight: 700;
-      text-align: center;
+    .project-item {
       margin-bottom: 40px;
     }
 
-    #projects h4 {
-      font-size: 24px;
-      font-weight: 700;
+    .project-item h4 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .project-item p {
+      font-size: 1.1rem;
+      line-height: 1.6;
       margin-bottom: 20px;
     }
 
-    #projects p {
-      font-size: 18px;
-      font-weight: 400;
-      margin-bottom: 20px;
-    }
-
-    /* Certifications Section Styles */
+    /* Certifications Section */
     #certifications {
       background-color: #f8f9fa;
-      padding: 80px 0;
     }
 
-    #certifications h2 {
-      font-size: 36px;
-      font-weight: 700;
-      text-align: center;
+    .certification-item {
       margin-bottom: 40px;
     }
 
-    #certifications h4 {
-      font-size: 24px;
-      font-weight: 700;
-      margin-bottom: 20px;
+    .certification-item h4 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 10px;
     }
 
-    /* WAPH Section Styles */
+    /* WAPH Section */
     #waph {
       background-color: #fff;
-      padding: 80px 0;
-    }
-
-    #waph h2 {
-      font-size: 36px;
-      font-weight: 700;
-      text-align: center;
-      margin-bottom: 40px;
-    }
-
-    #waph h4 {
-      font-size: 24px;
-      font-weight: 700;
-      margin-bottom: 20px;
     }
 
     #waph p {
-      font-size: 18px;
-      font-weight: 400;
-      text-align: center;
-      margin-bottom: 30px;
-    }
-
-    #waph a {
-      display: inline-block;
-      background-color: #343a40;
-      color: #fff;
-      padding: 10px 20px;
-      border-radius: 5px;
-      text-decoration: none;
-      font-size: 18px;
-      font-weight: 500;
-      transition: background-color 0.3s;
-    }
-
-    #waph a:hover {
-      background-color: #ffc107;
-      color: #343a40;
-    }
-
-    /* Contact Section Styles */
-    #contact {
-      background-color: #f8f9fa;
-      padding: 80px 0;
-    }
-
-    #contact h2 {
-      font-size: 36px;
-      font-weight: 700;
-      text-align: center;
-      margin-bottom: 40px;
-    }
-
-    #contact p {
-      font-size: 18px;
-      font-weight: 400;
-      text-align: center;
+      font-size: 1.1rem;
+      line-height: 1.6;
       margin-bottom: 20px;
     }
 
-    #contact .contact-info {
-      text-align: center;
-      margin-bottom: 30px;
+    #waph a {
+      font-size: 1.1rem;
+      color: #ff6b6b;
+      font-weight: 600;
     }
 
-    #contact .contact-info p {
-      font-size: 18px;
-      font-weight: 500;
-      margin: 10px 0;
+    #waph a:hover {
+      text-decoration: underline;
     }
 
-    #contact .contact-info i {
-      font-size: 24px;
-      margin-right: 10px;
-      color: #ffc107;
+    /* Contact Section */
+    #contact {
+      background-color: #ff6b6b;
+      color: #fff;
     }
 
-    #contact .contact-form {
-      max-width: 600px;
-      margin: auto;
+    #contact h2 {
+      color: #fff;
     }
 
-    #contact .form-control {
+    .contact-info p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .contact-form .form-control {
+      background-color: rgba(255, 255, 255, 0.1);
+      border: none;
       border-radius: 0;
-      border-color: #343a40;
+      color: #fff;
+      padding: 10px 15px;
+      margin-bottom: 20px;
     }
 
-    #contact .form-control:focus {
-      border-color: #ffc107;
+    .contact-form .form-control:focus {
+      background-color: rgba(255, 255, 255, 0.2);
       box-shadow: none;
     }
 
-    #contact textarea.form-control {
-      resize: none;
+    .contact-form textarea.form-control {
+      height: 150px;
     }
 
-    #contact .btn {
-      background-color: #343a40;
+    .contact-form .btn {
+      background-color: #fff;
+      color: #ff6b6b;
+      border-radius: 0;
+      padding: 15px 20px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      transition: all 0.3s ease;
+    }
+
+    .contact-form .btn:hover {
+      background-color: #ff6b6b;
       color: #fff;
-      border-radius: 5px;
-      border: none;
-      padding: 15px 30px;
-      font-size: 18px;
-      font-weight: 500;
-      transition: background-color 0.3s;
     }
 
-    #contact .btn:hover {
-      background-color: #ffc107;
-      color: #343a40;
-    }
-
-    /* Footer Styles */
+    /* Footer */
     footer {
-      background-color: #343a40;
+      background-color: #333;
       color: #fff;
-      padding: 30px 0;
+      padding: 20px 0;
       text-align: center;
-      position: relative;
-      bottom: 0;
-      width: 100%;
     }
 
     footer p {
-      font-size: 18px;
-      font-weight: 500;
-      margin: 10px 0;
+      margin-bottom: 0;
     }
 
-    footer .glyphicon-chevron-up {
-      font-size: 36px;
-      color: #ffc107;
-      cursor: pointer;
+    footer a {
+      color: #ff6b6b;
+    }
+
+    footer a:hover {
+      color: #fff;
     }
   </style>
 </head>
 <body>
 
-<!-- Navbar -->
+<!-- Navigation Bar -->
 <nav class="navbar navbar-expand-lg navbar-dark">
   <div class="container">
-    <a class="navbar-brand" href="#myPage">Naga Chetan Pidugu</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <a class="navbar-brand" href="#">Naga Chetan Pidugu</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item"><a class="nav-link" href="#about">ABOUT</a></li>
-        <li class="nav-item"><a class="nav-link" href="#education">EDUCATION</a></li>
-        <li class="nav-item"><a class="nav-link" href="#experience">EXPERIENCE</a></li>
-        <li class="nav-item"><a class="nav-link" href="#skills">SKILLS</a></li>
-        <li class="nav-item"><a class="nav-link" href="#projects">PROJECTS</a></li>
-        <li class="nav-item"><a class="nav-link" href="#certifications">CERTIFICATIONS</a></li>
-        <li class="nav-item"><a class="nav-link" href="#waph">WAPH COURSE</a></li>
-        <li class="nav-item"><a class="nav-link" href="#contact">CONTACT</a></li>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="#about">ABOUT</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#education">EDUCATION</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#experience">EXPERIENCE</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#skills">SKILLS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#projects">PROJECTS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#certifications">CERTIFICATIONS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#waph">WAPH COURSE</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#contact">CONTACT</a>
+        </li>
       </ul>
     </div>
   </div>
 </nav>
 
-<!-- Jumbotron -->
-<div id="home" class="jumbotron text-center">
+<!-- Jumbotron Section -->
+<section class="jumbotron text-center" id="home">
   <div class="container">
-    <img src="https://via.placeholder.com/200" alt="Profile Image" class="profile-img">
-    <h1>Naga Chetan Pidugu</h1>
-    <p>Software Engineer | Web and Application Developer</p>
+    <img src="https://via.placeholder.com/200" alt="Naga Chetan Pidugu" class="profile-img rounded-circle mb-4">
+    <h1 class="display-4">Naga Chetan Pidugu</h1>
+    <p class="lead">Software Engineer | Web and Application Developer</p>
     <p>Passionate about coding and working on interesting projects.</p>
   </div>
-</div>
+</section>
 
 <!-- About Section -->
-<div id="about" class="container">
-  <div class="row">
-    <div class="col-lg-8 mx-auto">
-      <h2>About Me</h2>
-      <p class="lead">I am a software engineer with a strong passion for web development. I love to create innovative and user-friendly web applications that solve real-world problems. My journey in programming started during my college days, and since then, I have been constantly learning and improving my skills.</p>
-      <p class="lead">In my free time, I enjoy working on personal projects, exploring new technologies, and contributing to open-source communities. I am a firm believer in the power of collaboration and enjoy working in dynamic and diverse teams.</p>
+<section id="about">
+  <div class="container">
+    <h2>About Me</h2>
+    <div class="row">
+      <div class="col-lg-8 mx-auto">
+        <p class="lead">I am a software engineer with a strong passion for web development. I love to create innovative and user-friendly web applications that solve real-world problems. My journey in programming started during my college days, and since then, I have been constantly learning and improving my skills.</p>
+        <p class="lead">In my free time, I enjoy working on personal projects, exploring new technologies, and contributing to open-source communities. I am a firm believer in the power of collaboration and enjoy working in dynamic and diverse teams.</p>
+      </div>
     </div>
   </div>
-</div>
+</section>
 
 <!-- Education Section -->
-<div id="education" class="container">
-  <div class="row">
-    <div class="col-lg-8 mx-auto">
-      <h2>Education</h2>
-      <div class="media">
-        <div class="media-body">
-          <h4 class="media-heading">Master of Science in Information Technology</h4>
+<section id="education">
+  <div class="container">
+    <h2>Education</h2>
+    <div class="row">
+      <div class="col-lg-8 mx-auto">
+        <div class="education-item">
+          <h4>Master of Science in Information Technology</h4>
           <p>University of Cincinnati, Cincinnati, Ohio (2023 - 2024)</p>
           <p>GPA: 4.00</p>
         </div>
-      </div>
-      <div class="media">
-        <div class="media-body">
-          <h4 class="media-heading">Bachelor of Technology in Electronics and Communication Engineering</h4>
+        <div class="education-item">
+          <h4>Bachelor of Technology in Electronics and Communication Engineering</h4>
           <p>Lovely Professional University, India (2017 - 2021)</p>
           <p>GPA: 3.76</p>
         </div>
       </div>
     </div>
   </div>
-</div>
+</section>
 
 <!-- Experience Section -->
-<div id="experience" class="container">
-  <div class="row">
-    <div class="col-lg-8 mx-auto">
-      <h2>Experience</h2>
-      <div class="media">
-        <div class="media-body">
-          <h4 class="media-heading">Software Engineer - L&T Technology Services (2021-2023)</h4>
+<section id="experience">
+  <div class="container">
+    <h2>Experience</h2>
+    <div class="row">
+      <div class="col-lg-8 mx-auto">
+        <div class="experience-item">
+          <h4>Software Engineer - L&T Technology Services (2021-2023)</h4>
           <h5>Mysore, India</h5>
           <p>I had the privilege of interning at L&T Technology Services, a renowned pure R&D service company, where I excelled and ranked within the top 3% of interns. During my internship, I was closely involved in the development of unique applications using various programming languages. I also gained hands-on experience in testing these applications by utilizing cutting-edge testing tools such as Google Test and Codacy. This experience has honed my technical skills and problem-solving abilities. Subsequently, I achieved a full-time position, further elevating my career. In this role, I closely collaborated with US clients, analyzing their needs and the development of communication protocols.</p>
         </div>
-      </div>
-      <div class="media">
-        <div class="media-body">
-          <h4 class="media-heading">Project Intern - Central Institute for Tool Design (2019)</h4>
+        <div class="experience-item">
+          <h4>Project Intern - Central Institute for Tool Design (2019)</h4>
           <h5>Hyderabad, India</h5>
           <p>I had the privilege of training at the Central Institute for Tool Design, an esteemed Indian Government Institute. During this training, I gained expertise in Raspberry Pi programming using Python. As a member of a collaborative team of four, I actively contributed to the development of a project titled 'Water Quality and Monitoring System. My primary responsibility within the team was to program the sensors, effectively integrating them with Raspberry Pi using Python. This experience enhanced my proficiency in both hardware and software aspects of project development and allowed me to apply my programming skills in a real-world context.</p>
         </div>
       </div>
     </div>
   </div>
-</div>
+</section>
 
 <!-- Skills Section -->
-<div id="skills" class="container">
-  <div class="row">
-    <div class="col-lg-8 mx-auto">
-      <h2>Skills</h2>
-      <div class="row">
-        <div class="col-sm-4">
+<section id="skills">
+  <div class="container">
+    <h2>Skills</h2>
+    <div class="row">
+      <div class="col-lg-8 mx-auto">
+        <div class="skill-item">
           <h4>Programming Languages</h4>
           <p>C, C++, Python, JAVA, SQL, HTML, CSS, JavaScript, Embedded C, Embedded Systems</p>
         </div>
-        <div class="col-sm-4">
+        <div class="skill-item">
           <h4>Technologies</h4>
           <p>Machine Learning, Front End Development, Internet of Things, Image Processing</p>
         </div>
-        <div class="col-sm-4">
+        <div class="skill-item">
           <h4>Tools & Frameworks</h4>
           <p>Git, jQuery, Node.js, Express.js</p>
         </div>
       </div>
     </div>
   </div>
-</div>
+</section>
 
 <!-- Projects Section -->
-<div id="projects" class="container">
-  <div class="row">
-    <div class="col-lg-8 mx-auto">
-      <h2>Projects</h2>
-      <div class="media">
-        <div class="media-body">
-          <h4 class="media-heading">Application Development, Real-time Face Mask Detection</h4>
-          <p>Led a small team in application development for a research project for the company. Coded in Python, used OpenCV for real-time video processing, and TensorFlow for training and deploying a deep learning model. Integrated the trained model into an application, targeting live public cameras, contributing to public safety measures.</p>
+<section id="projects">
+  <div class="container">
+    <h2>Projects</h2>
+    <div class="row">
+      <div class="col-lg-8 mx-auto">
+        <div class="project-item">
+          <h4>Application Development, Real-time face mask detection</h4>
+          <p>Led small team in application development for a research project for the company. Coded in Python used OpenCV for real-time video processing and TensorFlow for training and deploying a deep learning model. Integrated the trained model into an application, targeting live public cameras, contributing to public safety measures.</p>
         </div>
-      </div>
-      <div class="media">
-        <div class="media-body">
-          <h4 class="media-heading">Web Development, Autonomous Land Rover</h4>
-          <p>Created a website design from scratch for detail analytics of land rover behavior. Website contained HTML, CSS, JS, and React programming languages. Used Dijkstra's algorithm to compute the shortest path between GPS coordinates and conducted extensive testing and optimization.</p>
+        <div class="project-item">
+          <h4>Web Development, Autonomous land rover</h4>
+          <p>Created a website design from scratch for detail analytics of land rover behavior. Website contained HTML, CSS, JS and React programming languages. Dijkstra's to compute the shortest path between GPS coordinates and conducted extensive testing and optimization.</p>
         </div>
       </div>
     </div>
   </div>
-</div>
+</section>
 
 <!-- Certifications Section -->
-<div id="certifications" class="container">
-  <div class="row">
-    <div class="col-lg-8 mx-auto">
-      <h2>Certifications</h2>
-      <div class="media">
-        <div class="media-body">
-          <h4 class="media-heading">Machine Learning, Stanford University (2020)</h4>
+<section id="certifications">
+  <div class="container">
+    <h2>Certifications</h2>
+    <div class="row">
+      <div class="col-lg-8 mx-auto">
+        <div class="certification-item">
+          <h4>Machine Learning, Stanford University (2020)</h4>
         </div>
-      </div>
-      <div class="media">
-        <div class="media-body">
-          <h4 class="media-heading">Deep Learning Specialization, Coursera (2021)</h4>
+        <div class="certification-item">
+          <h4>Deep Learning Specialization, Coursera (2021)</h4>
         </div>
-      </div>
-      <div class="media">
-        <div class="media-body">
-          <h4 class="media-heading">Full Stack Web Development, Udemy (2022)</h4>
+        <div class="certification-item">
+          <h4>Full Stack Web Development, Udemy (2022)</h4>
         </div>
-      </div>
-      <div class="media">
-        <div class="media-body">
-          <h4 class="media-heading">Internet of Things, Udemy (2022)</h4>
+        <div class="certification-item">
+          <h4>Internet of Things, Udemy (2022)</h4>
         </div>
       </div>
     </div>
   </div>
-</div>
+</section>
 
 <!-- WAPH Section -->
-<div id="waph" class="container">
-  <div class="row">
-    <div class="col-lg-8 mx-auto">
-      <h2>Web Application Programming using HTML, CSS, and JavaScript</h2>
-      <h4>Naga Chetan Pidugu</h4>
-      <p>Completed a course on Web Application Programming using HTML, CSS, and JavaScript. I have developed this personal profile page.</p>
-      <p>COURSE LINK : <a href="https://www.udemy.com/course/web-application-programming/" target="_blank" rel="noopener noreferrer">Click here</a></p>
-    </div>
+<section id="waph">
+  <div class="container">
+    <h2>Web Application Programming using HTML, CSS and JavaScript</h2>
+    <h4>Naga Chetan Pidugu</h4>
+    <p>Completed a course on Web Application Programming using HTML, CSS and JavaScript, I have developed this personal profile page.</p>
+    <p>COURSE LINK : <a href="https://www.udemy.com/course/web-application-programming/">Click here</a></p>
   </div>
-</div>
+</section>
 
 <!-- Contact Section -->
-<div id="contact" class="container">
-  <h2 class="text-center">CONTACT</h2>
-  <div class="row">
-    <div class="col-lg-6 mx-auto">
-      <div class="contact-info">
-        <p><i class="fas fa-map-marker-alt"></i> Cincinnati, US</p>
-        <p><i class="fas fa-phone-alt"></i> +1 5133943724</p>
-        <p><i class="fas fa-envelope"></i> pidugunn@mail.uc.edu</p>
+<section id="contact">
+  <div class="container">
+    <h2 class="text-center">CONTACT</h2>
+    <div class="row">
+      <div class="col-lg-6 mx-auto">
+        <div class="contact-info text-center">
+          <p><i class="fas fa-map-marker-alt"></i> Cincinnati, US</p>
+          <p><i class="fas fa-phone"></i> +1 1234567890</p>
+          <p><i class="fas fa-envelope"></i> pidugun@ucmail.uc.edu</p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-8 mx-auto">
+        <form class="contact-form" method="POST">
+          <div class="form-group">
+            <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
+          </div>
+          <div class="form-group">
+            <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required>
+          </div>
+          <div class="form-group">
+            <textarea class="form-control" id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-block">Send Message</button>
+        </form>
       </div>
     </div>
   </div>
-  <div class="row">
-    <div class="col-lg-6 mx-auto">
-      <form action="#" method="post" class="contact-form">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Your Name" required>
-        </div>
-        <div class="form-group">
-          <input type="email" class="form-control" placeholder="Your Email" required>
-        </div>
-        <div class="form-group">
-          <textarea class="form-control" rows="5" placeholder="Message" required></textarea>
-        </div>
-        <button type="submit" class="btn btn-block">SEND MESSAGE</button>
-      </form>
-    </div>
-  </div>
-</div>
+</section>
 
-<!-- Footer -->
+<!-- Footer Section -->
 <footer>
   <div class="container">
     <p>&copy; 2024 Naga Chetan Pidugu. All rights reserved.</p>
-    <a href="#home" class="glyphicon glyphicon-chevron-up"></a>
   </div>
 </footer>
 
-<!-- Scripts -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.min.js"></script>
+<!-- Bootstrap Bundle with Popper -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
