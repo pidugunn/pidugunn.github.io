@@ -209,7 +209,7 @@
   </style>
 </head>
   
-<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
  
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container">
@@ -243,7 +243,6 @@
         <td><h1>Naga Chetan Pidugu</h1> 
         <p>Software Engineer | Web and Application Developer</p> 
         <p>Passionate about coding and working on interesting projects.</p></td>
-    </tr>
     </tr>
   </table>
 </div>
@@ -361,10 +360,10 @@ optimization.</p>
     </div>
     <div class="col-sm-7 slideanim">
       <div class="row">
-        <div class="col-sm-6 form-group">
+        <div class="col-sm-12 form-group">
           <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
         </div>
-        <div class="col-sm-6 form-group">
+        <div class="col-sm-12 form-group">
           <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
         </div>
       </div>
@@ -402,7 +401,7 @@ $(document).ready(function(){
       // Using jQuery's animate() method to add smooth page scroll
       // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
       $('html, body').animate({
-        scrollTop: $(hash).offset().top
+        scrollTop: $(hash).offset().top - 50
       }, 900, function(){
    
         // Add hash (#) to URL when done scrolling (default click behavior)
